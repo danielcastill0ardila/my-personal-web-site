@@ -10,23 +10,53 @@ var Index = function (_React$Component) {
   _inherits(Index, _React$Component);
 
   function Index() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Index);
 
-    return _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      count: 0
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var count = this.state.count;
+
       return React.createElement(
-        'p',
+        'div',
         null,
-        'It worked guy!'
+        React.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.setState({ count: count + 1 });
+            } },
+          'Test work'
+        ),
+        'Count: ',
+        count
       );
     }
   }]);
 
   return Index;
 }(React.Component);
+
+function Index() {
+  return React.createElement(
+    'button',
+    null,
+    'Test work'
+  );
+}
 
 ReactDOM.render(React.createElement(Index, null), document.getElementById('root'));
