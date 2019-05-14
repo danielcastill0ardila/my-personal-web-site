@@ -6,6 +6,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import 'emerald-ui/lib/styles.css';
+import { Button } from 'emerald-ui';
+
 var Index = function (_React$Component) {
   _inherits(Index, _React$Component);
 
@@ -36,11 +39,14 @@ var Index = function (_React$Component) {
         'div',
         null,
         React.createElement(
-          'button',
-          { onClick: function onClick() {
+          Button,
+          {
+            onClick: function onClick() {
               return _this2.setState({ count: count + 1 });
-            } },
-          'Test work'
+            },
+            color: 'info'
+          },
+          'Info'
         ),
         'Count: ',
         count
@@ -50,13 +56,5 @@ var Index = function (_React$Component) {
 
   return Index;
 }(React.Component);
-
-function Index() {
-  return React.createElement(
-    'button',
-    null,
-    'Test work'
-  );
-}
 
 ReactDOM.render(React.createElement(Index, null), document.getElementById('root'));
